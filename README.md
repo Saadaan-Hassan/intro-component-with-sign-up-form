@@ -44,8 +44,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click Here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Front-End Mentor](https://your-solution-url.com)
+- Live Site URL: [Github](https://saadaan-hassan.github.io/intro-component-with-sign-up-form/?fname=ads&lname=asdf&email=saadaanhs%40gmail.com&password=asd#)
 
 ## My process
 
