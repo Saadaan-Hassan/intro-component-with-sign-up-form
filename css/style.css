@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* -----CSS Reset----- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -----CSS Custom Properties----- */
+:root {
+  /* Colors */
+  --color-primary-300: hsl(154, 59%, 51%);
+  --color-primary-200: hsl(0, 100%, 74%);
+
+  --color-accent: hsl(248, 32%, 49%);
+
+  --color-neutral-900: hsl(249, 10%, 26%);
+  --color-neutral-200: hsl(246, 25%, 77%);
+  --color-neutral-100: hsl(0, 100%, 100%);
+
+  /* Font Family */
+  --ff-primary: "Poppins", sans-serif;
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  /* Font Sizes */
+  --fs-large: 2.7rem;
+  --fs-medium: 1rem;
+  --fs-small: 0.7rem;
+}
+
+/* ----Utility Classes---- */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Font Weights */
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+/* Font Sizes */
+.fs-large {
+  font-size: var(--fs-large);
+}
+
+.fs-medium {
+  font-size: var(--fs-medium);
+}
+
+.fs-small {
+  font-size: var(--fs-small);
+}
+
+/* Font Colors */
+.fc-primary-200 {
+  color: var(--color-primary-200);
+}
+
+.fc-neutral-200 {
+  color: var(--color-neutral-200);
+}
+
+.fc-neutral-900 {
+  color: var(--color-neutral-900);
+}
+
+/* Background Colors */
+.bc-accent {
+  background-color: var(--color-accent);
+}
+
+.bc-neutral-100 {
+  background-color: var(--color-neutral-100);
+}
+
+.bc-primary-300 {
+  background-color: var(--color-primary-300);
+}
+
+.box-shadow {
+  box-shadow: 0 8px hsla(249.2, 9.8%, 26.1%, 0.24);
+}
+
+/* ----Body---- */
+body {
+  background: var(--color-primary-200) url(../images/bg-intro-desktop.png);
+  font-family: var(--ff-primary);
+  color: var(--color-neutral-100);
+  flex-direction: column;
+}
+
+main {
+  width: 80vw;
+  margin: 6rem auto;
+}
+
+.intro-container h1 {
+  line-height: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-container {
+  --outter-radius: 10px;
+  --inner-radius: 5px;
+  --child-width: 34vw;
+}
+
+.form-container p,
+.form-container form {
+  border-radius: var(--outter-radius);
+}
+
+.form-container > p {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+form {
+  flex-direction: column;
+  padding: 3rem;
+}
+
+form input {
+  width: var(--child-width);
+  padding: 1rem 2rem;
+  margin: 0.7rem 0 0.4rem;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--inner-radius);
+}
+
+form input:focus-within {
+  outline: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+input[type='email']:invalid,
+.error-icon{ 
+  outline: 1px solid var(--color-primary-200);
+  border: none;
+  background-image: url("../images/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: 95%;
+}
+
+.error-message {
+  align-self: flex-end;
+  font-style: italic;
+  margin-bottom: 0.4rem;
+  margin-right: 0.4rem;
+  display: none;
+}
+
+.display{
+  display: block;
+}
+
+.btn {
+  border: none;
+  padding: 1rem;
+  margin-block: 0.7rem;
+  width: var(--child-width);
+  border-radius: var(--inner-radius);
+  text-transform: uppercase;
+  color: var(--color-neutral-100);
+  box-shadow: inset 0 -4px hsla(249.2, 9.8%, 26.1%, 0.24);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: hsla(154, 59%, 51%, 0.7);
+}
+
+/* ----Footer---- */
+
+footer {
+  margin-top: 3rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--color-accent);
+}
+
+/* Media Quries */
+@media screen and (max-width: 40em) {
+  :root {
+    --fs-large: 1.7rem;
+  }
+
+  body {
+    background-image: url(../images/bg-intro-mobile.png);
+    text-align: center;
+  }
+
+  main {
+    width: 90vw;
+    margin: auto;
+  }
+
+  .intro-container {
+    margin: 4.5rem 0;
+  }
+
+  .intro-container h1 {
+    width: 70vw;
+    margin: 1rem auto;
+  }
+
+  .intro-container p {
+    width: 85vw;
+  }
+
+  .form-container {
+    --child-width: 80vw;
+  }
+
+  .form-container p:first-child {
+    padding: 1rem 3rem;
+  }
+
+  .form-container p:last-child {
+    padding: 0.5rem 1.4rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  form input {
+    width: var(--child-width);
+    margin: 0.6rem 0 .6rem;
+    padding-inline: 1rem;
+  }
+
+  .btn {
+    width: var(--child-width);
+    margin-block: 0.5rem;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+}
